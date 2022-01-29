@@ -5,6 +5,7 @@ public abstract class AbstractField {
     protected Sign sign = null;
     protected boolean selected = false;
     protected boolean solved = false;
+    protected boolean drawn = false;
 
     public AbstractField(Tile tile) {
         this.tile = tile;
@@ -13,6 +14,10 @@ public abstract class AbstractField {
     public void setSign(Sign sign) {
         this.sign = sign;
         this.solved = true;
+    }
+
+    public boolean checkSelect() {
+        return this.selected;
     }
 
     public void select(){
@@ -29,5 +34,9 @@ public abstract class AbstractField {
 
     public Sign getSign() {
         return this.sign;
+    }
+
+    public boolean checkSolved() {
+        return this.solved;
     }
 }
